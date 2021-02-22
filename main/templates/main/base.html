@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">-->
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm pos-class sticky-top">
+        <h5 class="my-0 mr-md-auto font-weight-normal">URown</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">Войти</a>
+            <a class="p-2 text-dark" href="#">Регистрация</a>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar mt-20">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link text-dark" href="{% url 'home' %}">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="{% url 'create' %}">Добавить задачу</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="{% url 'about' %}">О нас</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="col-9">
+                    {% block content %} {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--<body>-->
+<!--    <div class="sticky-top">-->
+<!--        <div class="top-elements">-->
+<!--            <p>URown</p>-->
+<!--            <nav class="">-->
+<!--                <a class="" href="#">Войти</a>-->
+<!--                <a class="" href="#">Регистрация</a>-->
+<!--            </nav>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--    <div class="container">-->
+<!--        <div class="sidebar">-->
+<!--            <nav class="">-->
+<!--                <ul class="sidebar-ul">-->
+<!--                    <li class="sidebar-li"><a class="" href="{% url 'home' %}">Главная</a></li>-->
+<!--                    <li class="sidebar-li"><a class="" href="{% url 'create' %}">Добавить задачу</a></li>-->
+<!--                    <li class="sidebar-li"><a class="" href="{% url 'about' %}">О нас</a></li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+<!--        </div>-->
+<!--        <main role="main" class="">-->
+<!--            <div class="content">-->
+<!--                ЗДЕСТЬ БЛОК СОНТЕНТ!!!!!!-->
+<!--            </div>-->
+<!--        </main>-->
+<!--    </div>-->
+<!--</body>-->
